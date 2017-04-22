@@ -92,5 +92,3 @@ ENV/
 .Rhistory
 .RData
 .Ruserdata
-
-data/rawdata/*.csv

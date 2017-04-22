@@ -1,4 +1,5 @@
 library(tidyverse)
+library(igraph)
 
 # Get the top 50 MSAs
 population <- read_csv("data/census/ACS_15_5YR_DP05/ACS_15_5YR_DP05.csv", skip = 1) %>%
@@ -30,13 +31,45 @@ market <- market_raw %>%
   # Add MSA info
   left_join(connect, by = c("ORIGIN" = "AIRPORT_CODE")) %>%
   left_join(connect, by = c("DEST" = "AIRPORT_CODE"), suffix = c("_origin", "_dest"))
+
+# Remove observations that have the same MSA as origin and dest
 market <- market %>%
+  filter(METRO_AREA_origin != METRO_AREA_dest)
+
+# Sum up passengers from each origin to dest
+market <- market %>%
+  group_by(METRO_AREA_origin, METRO_AREA_dest) %>%
+  mutate(total = sum(PASSENGERS)) %>%
+  filter(row_number() == 1) %>%
+  ungroup()
+
+market <- market %>%
+  select(METRO_AREA_origin, METRO_AREA_dest, total)
+
+names <- market %>%
+  group_by(METRO_AREA_origin) %>%
+  filter(row_number() == 1) %>%
+  arrange(METRO_AREA_origin) %>%
+  select(METRO_AREA_origin) %>%
+  ungroup() %>%
+  rename(name = METRO_AREA_origin) %>%
+  mutate(index = 1:50)
+
+market_renamed <- market %>%
+  left_join(names, by = c("METRO_AREA_origin" = "name")) %>%
+  rename(origin = index) %>%
+  left_join(names, by = c("METRO_AREA_dest" = "name")) %>%
+  rename(dest = index) %>%
+  select(origin, dest, total)
+
+wide_index <- spread(market_renamed, dest, total)
+wide_names <- spread(market, METRO_AREA_dest, total)
+write_csv(wide_index, "data/adjacency_matrix.csv")
+write_csv(wide_names, "data/adjacency_matrix_names.csv")
+write_csv(names, "data/index_names.csv")
+
+  
 
 
 
-
-market %>%
-  arrange(ORIGIN_CITY_NAME) %>%
-  filter(ORIGIN == "JFK" | ORIGIN == "LGA" | ORIGIN == "EWR") %>%
-  View()
 

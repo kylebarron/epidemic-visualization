@@ -11,11 +11,17 @@ class graph(object):
         self.adj_matrix = []
         self.global_time = 0
         self.city_list = []
+        self.nation_data = []
+    
 
     def transmit_infection(self, city1 , city2):
         prob = self.adj_matrix[city1][city2]
         if(random.randint(1,math.ceil(1/prob)) == 1 and city_list[city2].infected == False):
             self.city_list[city].infect()
+
+    def build_nation_data(self):
+        for i in global_time:
+            pass
 
 
 def main():

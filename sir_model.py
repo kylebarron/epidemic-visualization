@@ -12,19 +12,20 @@ class city_sir_model(object):
         self.city_dens = density
         self.city_lat = latitude
         self.city_long = longitude
+        
         self.start_time = time.time()
         self.city_data = {}
-        self.beta = .5
+        self.beta = .8
         self.gamma = 0.01
         self.time_step = 1.0
         self.num_iterations = 70.0
         self.susceptible_init = 1-1e-6
         self.infected_init= 1e-6
         self.recovered_init = 0
-        self.initial_conditions = (self.susceptible_init, self.infected_init, 0.0)
+        self.global_time_infected = 0
+        self.initial_conditions = (self.susceptible_init, self.infected_init, global_time_infected)
         self.result = []
-        # self.infected = False
-        # self.global_time_infected = 0
+        self.infected = False
 
     def diff_eqs(self,INP,t):
     	equation_list=np.zeros((3))
@@ -59,14 +60,17 @@ class city_sir_model(object):
         self.infected = True
         self.run_eqs()
 
+    def get_city_data():
+        return city_sir_model("ny", 1000000, 10000, 1,1)
+
 def main():
     sample_model = city_sir_model("ny", 1000000, 10000, 1,1 )
-    # print(sample_model.start_time)
+    print(sample_model.start_time)
 
     sample_model.run_eqs()
-    for result in sample_model.result:
-        print(result)
-        # time.sleep(1)
+    # for result in sample_model.result:
+    #     print(result)
+    #     # time.sleep(1)
     sample_model.plot()
 
     # t_start = 0.0; t_end = 70; t_inc = sample_model.time_step

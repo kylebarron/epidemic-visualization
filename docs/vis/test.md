@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Visualization
-permalink: /vis/
+permalink: /vis/test
 ---
 
 Helloooooo

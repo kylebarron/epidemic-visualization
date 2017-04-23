@@ -12,7 +12,7 @@ class city_sir_model(object):
         self.city_dens = density
         self.city_lat = latitude
         self.city_long = longitude
-        
+
         self.start_time = time.time()
         self.city_data = {}
         self.beta = .8
@@ -23,7 +23,7 @@ class city_sir_model(object):
         self.infected_init= 1e-6
         self.recovered_init = 0
         self.global_time_infected = 0
-        self.initial_conditions = (self.susceptible_init, self.infected_init, global_time_infected)
+        self.initial_conditions = (self.susceptible_init, self.infected_init, self.global_time_infected)
         self.result = []
         self.infected = False
 
@@ -39,7 +39,9 @@ class city_sir_model(object):
         t_start = 0.0; t_end = self.num_iterations; t_inc = self.time_step
         t_range = np.arange(t_start, t_end+t_inc, t_inc)
         self.result = spi.odeint(self.diff_eqs, self.initial_conditions , t_range)
-        # print(self.result)
+        # for result in self.result:
+        #     print(result)
+        #     time.sleep(.001)
 
     def plot(self):
         pl.subplot(211)
@@ -68,10 +70,11 @@ def main():
     print(sample_model.start_time)
 
     sample_model.run_eqs()
+    # print(sample_model.result)
     # for result in sample_model.result:
     #     print(result)
-    #     # time.sleep(1)
-    sample_model.plot()
+        # time.sleep(1)?
+    # sample_model.plot()
 
     # t_start = 0.0; t_end = 70; t_inc = sample_model.time_step
     # t_range = np.arange(t_start, t_end+t_inc, t_inc)

@@ -7,26 +7,46 @@ import time
 ### --- creates an instance of the city and the behaviour of the disease --- ###
 class city_sir_model(object):
     def __init__(self, name, population, density, latitude, longitude, end_time):
+        #General info on city
         self.city_name = name
         self.city_pop = population
         self.city_dens = density
         self.city_lat = latitude
         self.city_long = longitude
 
-        self.start_time = time.time()
+        #Info on ODE's
         self.num_iterations = 0
-        self.city_data = {}
         self.beta = .8
         self.gamma = 0.01
-        self.time_step = 1.0
+        self.time_step = 0.1
+
+        #Initial and final time for simulation
+        self.global_time_infected = 0
+        self.end_time = end_time
+        
+        #Initial Conditions
         self.susceptible_init = 1-1e-6
         self.infected_init= 1e-6
         self.recovered_init = 0
-        self.global_time_infected = 0
         self.initial_conditions = (self.susceptible_init, self.infected_init, self.global_time_infected)
+
         self.result = []
         self.infected = False
-        self.end_time = end_time
+
+    def infect(self, time):
+        self.global_time_infected = time
+        self.num_iterations = int(10*(self.end_time - self.global_time_infected))
+        self.infected = True
+        self.run_eqs()
+
+    def run_eqs(self):
+        t_start = self.global_time_infected;
+        t_end = self.end_time
+        t_inc = self.time_step
+        t_range = np.arange(t_start, t_end, t_inc)
+        self.result = spi.odeint(self.diff_eqs, self.initial_conditions , t_range)
+        # for result in self.result:
+        #     print(result)
 
     def diff_eqs(self,INP,t):
     	equation_list=np.zeros((3))
@@ -35,15 +55,6 @@ class city_sir_model(object):
     	equation_list[1] = self.beta * initial_conditions[0] * initial_conditions[1] - self.gamma * initial_conditions[1]
     	equation_list[2] = self.gamma * initial_conditions[1]
     	return equation_list   # For odeint
-
-    def run_eqs(self):
-        self.set_num_iterations()
-        t_start = 0.0; t_end = self.num_iterations; t_inc = self.time_step
-        t_range = np.arange(t_start, t_end, t_inc)
-        self.result = spi.odeint(self.diff_eqs, self.initial_conditions , t_range)
-        # for result in self.result:
-        #     print(result)
-
 
     def plot(self):
         pl.subplot(211)
@@ -58,18 +69,6 @@ class city_sir_model(object):
         pl.xlabel('Time')
         pl.ylabel('Infectious')
         pl.show()
-
-    def infect(self, time):
-        self.global_time_infected = time
-        self.infected = True
-        self.run_eqs()
-
-
-    def set_num_iterations(self):
-        self.num_iterations = int(10*(self.end_time - self.global_time_infected))
-
-    def get_city_data(self):
-        return self.result
 
 def main():
     sample_model = city_sir_model("ny",1000000,10000,1,1,200)

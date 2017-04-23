@@ -1,5 +1,5 @@
 - title: "Visualization"
-  href: "{{ site.github.url }}/vis/"
+  href: "{{ site.baseurl }}{{ post.url }}/vis/"
 
 - title: "About"
-  href: "{{ site.github.url }}/about/"
+  href: "{{ site.baseurl }}{{ post.url }}/about/"

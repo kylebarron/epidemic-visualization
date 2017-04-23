@@ -1,5 +1,5 @@
 - title: "Visualization"
-  href: "/{{site.baseurl}}{{post.url}}/vis/"
+  href: "/{{site.baseurl}}{{page.url}}/vis/"
 
 - title: "About"
-  href: "/{{site.baseurl}}{{post.url}}/about/"
+  href: "/{{site.baseurl}}{{page.url}}/about/"

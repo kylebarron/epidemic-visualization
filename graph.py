@@ -15,7 +15,7 @@ class graph(object):
         self.global_index = max_time*10
         self.global_time = np.arange(0,max_time,.1)
         self.city_list = []
-        self.nation_data = [[0]*50]*self.global_index
+        self.nation_data = [[[0]*3]*50]*self.global_index
         self.test = []
 
     def transmit_infection(self, city1 , city2, time):
@@ -39,7 +39,10 @@ class graph(object):
         for i in range(self.global_index):
             for j in range(len(self.vertices)):
                 if(self.vertices[j].global_time_infected == i/10):
-                    print(i - self.vertices[j].global_time_infected*10)
+                    for k in range(int(self.vertices[j].num_iterations)):
+                        self.nation_data[i][j][0] = self.vertices[j].result[k][0]
+                        self.nation_data[i][j][1] = self.vertices[j].result[k][1]
+                        self.nation_data[i][j][2] = self.vertices[j].result[k][2]
 
     def populate_inf_times(self):
         for i in self.global_time:
@@ -79,6 +82,7 @@ def main():
     test.vertices[20].infect(0)
     test.populate_inf_times()
     test.build_nation_data()
+    print(test.nation_data[20])
 
 
 

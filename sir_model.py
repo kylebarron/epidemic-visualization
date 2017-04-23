@@ -78,8 +78,8 @@ def main():
     sample_model.run_eqs()
     print(sample_model.get_city_data())
     # print(sample_model.result)
-    # for result in sample_model.result:
-    #     print(result)
+
+    print(sample_model.result)
         # time.sleep(1)?
     # sample_model.plot()
 

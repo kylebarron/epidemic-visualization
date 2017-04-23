@@ -24,8 +24,6 @@ url: "kylebarron.github.io" # the base hostname & protocol for your site, e.g. h
 #twitter_username: jekyllrb
 github_username:  kylebarron
 
-set :http_prefix, '/epidemic-visualization'
-
 
 # Build settings
 markdown: kramdown
@@ -35,5 +33,3 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
-
-permalink: epidemic-visualization/

@@ -1,0 +1,65 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+<!--     <h2 class="footer-heading">{{ site.title }}</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li><strong>{{ site.title }}</strong></li>
+			<li>{{ site.jobtitle }}</li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+
+
+          {% if site.github_username %}
+  <li>
+    <a href="https://github.com/{{ site.github_username }}">
+      <i class="fa fa-github fa-fw" style="color:gray"></i> {{ site.github_username }}
+    </a>
+  </li>
+{% endif %}
+
+          {% if site.keybase_username %}
+  <li>
+    <a href="https://keybase.io/{{ site.keybase_username }}">
+      <i class="fa fa-key fa-fw" style="color:gray"></i> {{ site.keybase_username }}
+    </a>
+  </li>
+{% endif %}
+
+          {% if site.twitter_username %}
+  <li>
+    <a href="https://twitter.com/{{ site.twitter_username }}">
+      <i class="fa fa-twitter fa-fw" style="color:gray"></i> {{ site.twitter_username }}
+    </a>
+  </li>
+{% endif %}
+
+          {% if site.linkedin_username %}
+<li>
+  <a href="https://www.linkedin.com/in/kyle-barron-448b5888">
+    <i class="fa fa-linkedin-square fa-fw" style="color:gray"></i> {{ site.linkedin_username }}
+  </a>
+</li>
+{% endif %}
+
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+         <p class="text">
+		<br />
+		<br />
+  </p> <!-- {{ site.description SVMILLER ADDRESS WENT HERE   }} -->
+      </div>
+    </div>
+
+  </div>
+
+</footer>

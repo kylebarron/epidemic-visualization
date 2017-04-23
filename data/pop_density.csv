@@ -1,0 +1,51 @@
+city,population,pop_density,lon,lat
+"Atlanta-Sandy Springs-Roswell, GA Metro Area",5535837,631.9,-84.42694,33.64044
+"Austin-Round Rock, TX Metro Area",1889094,406.7,-97.66989,30.19453
+"Baltimore-Columbia-Towson, MD Metro Area",2769818,1041.9,-76.66833,39.17536
+"Birmingham-Hoover, AL Metro Area",1138476,213.7,-86.75355,33.56294
+"Boston-Cambridge-Newton, MA-NH Metro Area",4694565,1305.4,-71.28903,42.46995
+"Buffalo-Cheektowaga-Niagara Falls, NY Metro Area",1135734,725.5,-78.73217,42.94052
+"Charlotte-Concord-Gastonia, NC-SC Metro Area",2338792,569.8,-80.94313,35.21401
+"Chicago-Naperville-Elgin, IL-IN-WI Metro Area",9534008,1314.6,-87.75242,41.78598
+"Cincinnati, OH-KY-IN Metro Area",2139466,485.0,-84.66217,39.04614
+"Cleveland-Elyria, OH Metro Area",2064483,1040.0,-81.84979,41.41169
+"Columbus, OH Metro Area",1972375,462.9,-82.89188,39.99799
+"Dallas-Fort Worth-Arlington, TX Metro Area",6833420,713.7,-96.85177,32.84711
+"Denver-Aurora-Lakewood, CO Metro Area",2703972,304.8,-104.667,39.85841
+"Detroit-Warren-Dearborn, MI Metro Area",4296416,1104.9,-83.35339,42.21243
+"Hartford-West Hartford-East Hartford, CT Metro Area",1214056,800.5,-72.68322,41.93889
+"Houston-The Woodlands-Sugar Land, TX Metro Area",6346653,673.7,-95.33972,29.98047
+"Indianapolis-Carmel-Anderson, IN Metro Area",1950674,455.6,-86.29438,39.71733
+"Jacksonville, FL Metro Area",1401600,420.4,-81.68786,30.49406
+"Kansas City, MO-KS Metro Area",2055675,260.0,-94.71391,39.29761
+"Las Vegas-Henderson-Paradise, NV Metro Area",2035572,247.3,-115.19575,36.21167
+"Los Angeles-Long Beach-Anaheim, CA Metro Area",13154457,2646.0,-118.40807,33.94254
+"Louisville/Jefferson County, KY-IN Metro Area",1261936,312.2,-85.736,38.17439
+"Memphis, TN-MS-AR Metro Area",1340336,287.5,-89.97667,35.04242
+"Miami-Fort Lauderdale-West Palm Beach, FL Metro Area",5861000,1096.0,-80.29056,25.79325
+"Milwaukee-Waukesha-West Allis, WI Metro Area",1570006,1069.5,-87.89658,42.94722
+"Minneapolis-St. Paul-Bloomington, MN-WI Metro Area",3458790,544.2,-93.21692,44.88055
+"Nashville-Davidson--Murfreesboro--Franklin, TN Metro Area",1761848,279.5,-86.67818,36.12448
+"New Orleans-Metairie, LA Metro Area",1239697,394.5,-90.25803,29.99339
+"New York-Newark-Jersey City, NY-NJ-PA Metro Area",19979950,2826.0,-74.19625,40.69674
+"Oklahoma City, OK Metro Area",1318408,227.3,-97.60073,35.39309
+"Orlando-Kissimmee-Sanford, FL Metro Area",2277816,613.6,-81.23749,28.77764
+"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD Metro Area",6035680,1296.2,-75.24114,39.87195
+"Phoenix-Mesa-Scottsdale, AZ Metro Area",4407915,287.9,-112.00806,33.43417
+"Pittsburgh, PA Metro Area",2358926,446.1,-80.23287,40.49147
+"Portland-Vancouver-Hillsboro, OR-WA Metro Area",2320323,333.0,-122.5975,45.58872
+"Providence-Warwick, RI-MA Metro Area",1606424,1008.8,-70.95694,41.67614
+"Raleigh, NC Metro Area",1216711,533.7,-78.78747,35.87764
+"Richmond, VA Metro Area",1246215,221.3,-77.31967,37.50517
+"Riverside-San Bernardino-Ontario, CA Metro Area",4392801,155.0,-117.60119,34.056
+"Sacramento--Roseville--Arden-Arcade, CA Metro Area",2221525,421.9,-121.59078,38.69542
+"Salt Lake City, UT Metro Area",1139851,117.7,-111.981,40.7859
+"San Antonio-New Braunfels, TX Metro Area",2286702,293.0,-98.46978,29.53369
+"San Diego-Carlsbad, CA Metro Area",3223096,735.8,-117.28008,33.12825
+"San Francisco-Oakland-Hayward, CA Metro Area",4528894,1754.8,-122.37489,37.61897
+"San Jose-Sunnyvale-Santa Clara, CA Metro Area",1925706,685.7,-121.92901,37.36186
+"Seattle-Tacoma-Bellevue, WA Metro Area",3614361,585.8,-122.30196,47.52999
+"St. Louis, MO-IL Metro Area",2801914,326.2,-89.83518,38.54518
+"Tampa-St. Petersburg-Clearwater, FL Metro Area",2888458,1107.3,-82.53325,27.97547
+"Virginia Beach-Norfolk-Newport News, VA-NC Metro Area",1706878,635.7,-76.20122,36.89461
+"Washington-Arlington-Alexandria, DC-VA-MD-WV Metro Area",5949403,997.1,-77.03772,38.85208

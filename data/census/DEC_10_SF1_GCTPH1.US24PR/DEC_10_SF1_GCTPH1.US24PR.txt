@@ -1,0 +1,47 @@
+GCT-PH1
+Population, Housing Units, Area, and Density:  2010 - United States -- Metropolitan Statistical Area; and for Puerto Rico
+
+NOTE: For information on confidentiality protection, nonsampling error, and definitions, see  http://www.census.gov/prod/cen2010/doc/sf1.pdf.
+
+T1_POP$0100000US
+	(r38234)	This count has been revised.   
+Revised count: 308,746,065 Revision date: 01-31-2014
+
+For more information, see  2010 Census Count Question Resolution.
+
+  
+
+
+T1_HU$0100000US
+	(r15031)	This count has been revised.   
+Revised count: 131,704,954 Revision date: 01-31-2014
+
+For more information, see  2010 Census Count Question Resolution.
+
+  
+
+
+T1_POP$0400000US72
+	(r49850)	Este recuento se ha revisado.
+Recuento revisado: 3,725,793 Fecha de revisión: 11-15-2013
+
+ Para más información, vea   Programa de Resolución de Querellas sobre el Recuento Censal del 2010.
+
+  
+
+
+T1_HU$0400000US72
+	(r25701)	Este recuento se ha revisado.
+Recuento revisado: 1,636,947 Fecha de revisión: 11-15-2013
+
+ Para más información, vea   Programa de Resolución de Querellas sobre el Recuento Censal del 2010.
+
+  
+
+
+X Not applicable.
+
+Source: U.S. Census Bureau, 2010 Census.
+
+Census 2010 Summary File 1, Geographic Header Record G001.
+

@@ -1,0 +1,4 @@
+GEO.id,GEO.id2,GEO.display-label,GCT_STUB.target-geo-id,GCT_STUB.target-geo-id2,GCT_STUB.display-label,GCT_STUB.display-label,HD01,HD02,SUBHD0301,SUBHD0302,SUBHD0303,SUBHD0401,SUBHD0402
+Id,Id2,Geography,Target Geo Id,Target Geo Id2,Geographic area,Geographic area,Population,Housing units,Area in square miles - Total area,Area in square miles - Water area,Area in square miles - Land area,Density per square mile of land area - Population,Density per square mile of land area - Housing units
+0100000US,,United States,0100000US,,United States,United States,T1_POP$0100000US,T1_HU$0100000US,,,,,
+0100000US,,United States,0400000US72,72,Puerto Rico,Puerto Rico,T1_POP$0400000US72,T1_HU$0400000US72,,,,,

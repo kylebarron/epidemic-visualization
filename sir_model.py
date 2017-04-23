@@ -6,7 +6,7 @@ import time
 
 ### --- creates an instance of the city and the behaviour of the disease --- ###
 class city_sir_model(object):
-    def __init__(self, name, population, density, latitude, longitude):
+    def __init__(self, name, population, density, latitude, longitude, end_time):
         self.city_name = name
         self.city_pop = population
         self.city_dens = density
@@ -14,11 +14,11 @@ class city_sir_model(object):
         self.city_long = longitude
 
         self.start_time = time.time()
+        self.num_iterations = 0
         self.city_data = {}
         self.beta = .8
         self.gamma = 0.01
         self.time_step = 1.0
-        self.num_iterations = 70.0
         self.susceptible_init = 1-1e-6
         self.infected_init= 1e-6
         self.recovered_init = 0
@@ -26,6 +26,7 @@ class city_sir_model(object):
         self.initial_conditions = (self.susceptible_init, self.infected_init, self.global_time_infected)
         self.result = []
         self.infected = False
+        self.end_time = end_time
 
     def diff_eqs(self,INP,t):
     	equation_list=np.zeros((3))
@@ -36,12 +37,13 @@ class city_sir_model(object):
     	return equation_list   # For odeint
 
     def run_eqs(self):
+        self.set_num_iterations()
         t_start = 0.0; t_end = self.num_iterations; t_inc = self.time_step
-        t_range = np.arange(t_start, t_end+t_inc, t_inc)
+        t_range = np.arange(t_start, t_end, t_inc)
         self.result = spi.odeint(self.diff_eqs, self.initial_conditions , t_range)
         # for result in self.result:
         #     print(result)
-        #     time.sleep(.001)
+
 
     def plot(self):
         pl.subplot(211)
@@ -62,14 +64,19 @@ class city_sir_model(object):
         self.infected = True
         self.run_eqs()
 
-    def get_city_data():
-        return city_sir_model("ny", 1000000, 10000, 1,1)
+
+    def set_num_iterations(self):
+        self.num_iterations = self.end_time - self.global_time_infected
+
+    def get_city_data(self):
+        return self.result
 
 def main():
-    sample_model = city_sir_model("ny", 1000000, 10000, 1,1 )
+    sample_model = city_sir_model("ny",1000000,10000,1,1,200)
     print(sample_model.start_time)
 
     sample_model.run_eqs()
+    print(sample_model.get_city_data())
     # print(sample_model.result)
     # for result in sample_model.result:
     #     print(result)

@@ -66,7 +66,7 @@ class city_sir_model(object):
 
 
     def set_num_iterations(self):
-        self.num_iterations = self.end_time - self.global_time_infected
+        self.num_iterations = int(10*(self.end_time - self.global_time_infected))
 
     def get_city_data(self):
         return self.result

@@ -6,6 +6,14 @@ import math
 import csv
 from sir_model import city_sir_model
 
+
+class data_point(object):
+    def __init__(self, s, i, r):
+        self.s = s
+        self.i = i
+        self.r = r
+
+
 ### --- graph data structure to connect cities --- ###
 class graph(object):
     def __init__(self, max_time):
@@ -15,8 +23,9 @@ class graph(object):
         self.global_index = max_time*10
         self.global_time = np.arange(0,max_time,.1)
         self.city_list = []
-        self.nation_data = [[[0]*3]*50]*self.global_index
+        self.nation_data = [[0]*50]*self.global_index
         self.test = []
+        self.nation_data_test = [[0]*50]*self.global_index
 
     def transmit_infection(self, city1 , city2, time):
         prob = float(self.adj_matrix[city1][city2])
@@ -39,10 +48,11 @@ class graph(object):
         for i in range(self.global_index):
             for j in range(len(self.vertices)):
                 if(self.vertices[j].global_time_infected == i/10):
-                    for k in range(int(self.vertices[j].num_iterations)):
-                        self.nation_data[i][j][0] = self.vertices[j].result[k][0]
-                        self.nation_data[i][j][1] = self.vertices[j].result[k][1]
-                        self.nation_data[i][j][2] = self.vertices[j].result[k][2]
+                    for k in range(self.vertices[j].num_iterations):
+                        temp_dp = data_point(self.vertices[j].result[k][0], self.vertices[j].result[k][1], self.vertices[j].result[k][2])
+                        self.nation_data[i+k][j] = temp_dp
+                        if(j==20):
+                            print(self.nation_data[i+k][j].s, self.nation_data[i+k][j].i, self.nation_data[i+k][j].r)
 
     def populate_inf_times(self):
         for i in self.global_time:
@@ -82,8 +92,9 @@ def main():
     test.vertices[20].infect(0)
     test.populate_inf_times()
     test.build_nation_data()
-    print(test.nation_data[20])
-
+    # print(test.nation_data[:][21])
+    # for i in range(len(test.nation_data[20])):
+    #     print(test.nation_data[20][i])
 
 
 if __name__ == '__main__':
